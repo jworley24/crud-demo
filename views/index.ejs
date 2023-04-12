@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>The Best Quotes</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+    
+    <h1 data-position="header">The best quotes in existence.</h1>
+
+
+<section data-position="add-quote">
+    <h2>Add quote</h2>
+
+    <form action="/quotes" method="POST">
+        <input type="text" placeholder="name" name="name">
+        <input type="text" placeholder="quote" name="quote">
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<section data-position="update-quote">
+<div>
+    <h2>Joey invades!</h2>
+    <p>
+        Replace first quote with a quote written by Joey
+    </p>
+    <button id="update-button">Replace Yoda's quote</button>
+</div>
+</section>
+
+<section data-position="delete-quote">
+<div>
+    <h2>Remove Joey!</h2>
+    <p>
+        Delete one of Joey's quotes. Does nothing if there are no quotes by Joey.
+    </p>
+    <button id="delete-button">Delete Joey's quote</button>
+    <div id="message"></div>
+</div>
+</section>
+<section data-position="quotes">
+<h2>Quotes</h2>
+
+<ul class="quotes">
+    <% for(var i = 0; i < quotes.length; i++) {%>
+        <li class="quote">
+            <span><%= quotes[i].name %></span>:
+            <span><%= quotes[i].quote %></span>
+        </li>
+    <% } %>
+</ul>
+</section>
+
+<script src="/main.js"></script>
+</body>
+</html>
